@@ -12,7 +12,7 @@ class passwordSystem:
              # ^check key in data         ^check value attatched to key 
 class userMenu:
     def __init__(self):
-        self.obj = passwordSystem() #constructor method, instantiates passwordSysten
+        self.obj = passwordSystem()  # constructor method, instantiates passwordSystem
     
     def menu(self):
         setFlag = '0' #flag for resetting user/pass prompt
@@ -21,7 +21,7 @@ class userMenu:
                 choice = input("Create Account(1) or Login(2)?\n")
             if choice == '1':
                 username = input("Create a Username: ")
-                password = input("Create a assword: ")
+                password = input("Create a Password: ")
                 self.obj.mapCreate(username, password)
                 print(f"{username}'s account created")
                 
@@ -34,7 +34,7 @@ class userMenu:
                 else:
                     print("Incorrect username or password")
                     setFlag = '1'
-            elif choice == 3:
+            elif choice == '3':
                 print("Exiting...")
                 break
             else:
