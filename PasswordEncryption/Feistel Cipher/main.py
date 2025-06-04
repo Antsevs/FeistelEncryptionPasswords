@@ -30,7 +30,8 @@ class feistel:
         print(self.R1, self.L1)
         
     def generateKey(self):  #generate a random key using secrets library
-        length = len(self.L1) * 8   #set length to 8 times size of halves (each letter is 8 bits)
+        # keys should match the size of the first half
+        length = len(self.R1) * 8   # set length to 8 times size of halves (each letter is 8 bits)
         self.K1 = f'{secrets.randbits(length):0{length}b}'  #format randbits to n length binary values where n is size of halves in bits
         self.K2 = f'{secrets.randbits(length):0{length}b}'
         print(self.K1, self.K2)
